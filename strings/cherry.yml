@@ -1,0 +1,75 @@
+# 🤖 Basic Bot Commands
+PING_COMMAND: ["ping"]
+START_COMMAND: ["start"]
+HELP_COMMAND: ["help"]
+SETTINGS_COMMAND: ["settings", "setting"]
+RELOAD_COMMAND: ["admincache", "reload"]
+LANGUAGE_COMMAND: ["lang", "language", "langs"]
+UPDATE_COMMAND: ["update"]
+REBOOT_COMMAND: ["reboot"]
+AUTOEND_COMMAND: ["autoend"]
+GSTATS_COMMAND: ["gstats"]
+STATS_COMMAND: ["stats"]
+
+# 🎵 Play Commands
+PLAY_COMMAND: ["play", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce"]
+PLAYMODE_COMMAND: ["playmode"]
+CHANNELPLAY_COMMAND: ["channelplay"]
+STREAM_COMMAND: ["stream", "cstream", "streamforce"]
+
+# 🎼 Playlist Commands
+PLAYLIST_COMMAND: ["playlist"]
+DELETEPLAYLIST_COMMAND: ["deleteplaylist"]
+
+# 🧰 Tools
+QUEUE_COMMAND: ["queue", "cqueue", "player", "cplayer", "playing", "cplaying"]
+SONG_COMMAND: ["song", "video"]
+LYRICS_COMMAND: ["lyrics"]
+
+# 🛠️ Admin Playback Controls
+AUTH_COMMAND: ["auth"]
+UNAUTH_COMMAND: ["unauth"]
+AUTHUSERS_COMMAND: ["authusers"]
+PAUSE_COMMAND: ["pause", "cpause"]
+RESUME_COMMAND: ["resume", "cresume"]
+MUTE_COMMAND: ["mute", "cmute"]
+UNMUTE_COMMAND: ["unmute", "cunmute"]
+STOP_COMMAND: ["stop", "end", "cstop", "cend"]
+SKIP_COMMAND: ["skip", "cskip"]
+SHUFFLE_COMMAND: ["shuffle", "cshuffle"]
+LOOP_COMMAND: ["loop", "cloop"]
+SEEK_COMMAND: ["seek", "cseek", "seekback", "cseekback"]
+RESTART_COMMAND: ["restart"]
+
+# 📣 Broadcast
+BROADCAST_COMMAND: ["broadcast"]
+
+# 🚫 Chat Blacklist Controls
+BLACKLISTCHAT_COMMAND: ["blacklistchat"]
+WHITELISTCHAT_COMMAND: ["whitelistchat"]
+BLACKLISTEDCHAT_COMMAND: ["blacklistedchat"]
+
+# 🎥 Video Call Settings
+VIDEOLIMIT_COMMAND: ["set_video_limit"]
+VIDEOMODE_COMMAND: ["videomode"]
+
+# ⚙️ Maintenance & Logger
+MAINTENANCE_COMMAND: ["maintenance"]
+LOGGER_COMMAND: ["logger"]
+
+# ⛔ User Block Controls
+BLOCK_COMMAND: ["block"]
+UNBLOCK_COMMAND: ["unblock"]
+BLOCKED_COMMAND: ["blockedusers"]
+
+# 🚀 Speed Test
+SPEEDTEST_COMMAND: ["speedtest"]
+
+# 🔊 Active Voice/Video
+ACTIVEVC_COMMAND: ["activevoice"]
+ACTIVEVIDEO_COMMAND: ["activevideo"]
+
+# 🌐 Global Ban Controls
+GBAN_COMMAND: ["gban"]
+UNGBAN_COMMAND: ["ungban"]
+GBANNED_COMMAND: ["gbannedusers"]

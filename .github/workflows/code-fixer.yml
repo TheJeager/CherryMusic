@@ -1,0 +1,30 @@
+name: Auto Code Fixer
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  format-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Install formatting tools
+        run: |
+          pip install --upgrade pip
+          pip install ruff black
+
+      - name: Run Ruff (Lint + Auto-fix)
+        run: ruff check . --fix --exit-zero
+
+      - name: Run Black (Auto-format)
+        run: black . --quiet
