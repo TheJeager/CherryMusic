@@ -6,7 +6,7 @@ dnspython
 ffmpeg-python
 hachoir
 httpx[http2]>=0.28.1
-pymongo==4.15.5
+pymongo==4.16.0
 pillow>=12.0.0
 psutil==7.2.1
 py-tgcalls==2.2.8
