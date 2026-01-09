@@ -1,6 +1,7 @@
 import random
 import re
 import string
+from urllib.parse import urlparse
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
@@ -80,8 +81,22 @@ def is_safe_url(url):
         if re.search(pattern, url_lower, re.IGNORECASE):
             return False
     
+    parsed = None
+    try:
+        parsed = urlparse(url)
+    except Exception:
+        return False
+    hostname = parsed.hostname.lower() if parsed and parsed.hostname else None
+    
     if url.count(';') > 0 or url.count('|') > 1:
-        if 'youtube.com' in url_lower or 'youtu.be' in url_lower:
+        # Only allow semicolons/pipes in query parameters for YouTube domains
+        if hostname in ('youtube.com', 'youtu.be') or (
+            hostname
+            and (
+                hostname.endswith('.youtube.com')
+                or hostname.endswith('.youtu.be')
+            )
+        ):
             url_parts = url.split('?', 1)
             if len(url_parts) > 1:
                 params = url_parts[1]
@@ -103,12 +118,21 @@ def is_safe_url(url):
     ]
     
     if url.startswith('http://') or url.startswith('https://'):
-        domain_match = re.search(r'https?://(?:www\.)?([^/?\s]+)', url)
-        if domain_match:
-            domain = domain_match.group(1).lower()
-            is_allowed = any(allowed in domain for allowed in allowed_domains)
-            if not is_allowed and not url.startswith('https://t.me/'):
-                return False
+        if not hostname:
+            return False
+        domain = hostname
+        
+        def _is_allowed_host(host: str) -> bool:
+            host = host.lower()
+            for allowed in allowed_domains:
+                allowed = allowed.lower()
+                if host == allowed or host.endswith('.' + allowed):
+                    return True
+            return False
+        
+        is_allowed = _is_allowed_host(domain)
+        if not is_allowed and not url.startswith('https://t.me/'):
+            return False
     
     return True
 
