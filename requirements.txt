@@ -9,7 +9,7 @@ httpx[http2]>=0.28.1
 pymongo==4.16.0
 pillow>=12.0.0
 psutil==7.2.2
-py-tgcalls==2.2.10
+py-tgcalls==2.2.11
 ntgcalls>=2.0.6
 pykeyboard2==0.1.6
 pyrofork
